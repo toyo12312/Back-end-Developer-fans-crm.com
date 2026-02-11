@@ -29,7 +29,13 @@ npm install
 3. Run with DockerThe easiest way to start the MongoDB instance:Bashdocker-compose up -d
 4. Start ApplicationBash# Development mode
 npm run start:dev
-📡 API Endpoints🔐 AuthenticationThe add-user endpoint is protected. You must provide a JWT Token in the header:Authorization: Bearer <your_token>👤 User ManagementMethodEndpointDescriptionAuthPOST/api/v1/add-userCreate a new user & log to console✅GET/api/v1/get-usersGet paginated users with filters❌GET/api/v1/get-user/:idGet specific user by ID❌Query Parameters for GET /api/v1/get-users:page: Page number (default: 1)limit: Records per page (default: 10)search: Optional filter by name, email, or phone (case-insensitive)⚡ Database SeedingOn the first application launch, an automated Seeding Process kicks in:Target: 2,000,000 records.Method: Batch processing using insertMany for high performance.Fields: Full Name, Email, Phone Number, and Birthday.Performance: Optimized with database indexes on searchable fields.📂 Project StructurePlaintextsrc/
+📡 API Endpoints
+🔐 AuthenticationThe add-user endpoint is protected. You must provide a JWT Token in the header:Authorization: Bearer <your_token>
+👤 User ManagementMethodEndpointDescriptionAuthPOST/api/v1/add-userCreate a new user & log to console✅GET/api/v1/get-usersGet paginated users with filters❌GET/api/v1/get-user/:idGet specific user by ID❌Query Parameters for GET /api/v1/get-users:page: Page number (default: 1)limit: Records per page (default: 10)search: Optional filter by name, email, or phone (case-insensitive)
+⚡ Database SeedingOn the first application launch, an automated Seeding Process kicks in:Target: 2,000,000 records.Method:
+ Batch processing using insertMany for high performance.Fields: Full Name, Email, Phone Number, and Birthday.Performance:
+Optimized with database indexes on searchable fields.
+📂 Project StructurePlaintextsrc/
 ├── auth/           # JWT Strategy, Guards and Module
 ├── users/          # Users logic, Controller, Service and Schema
 │   └── schemas/    # Mongoose User Schema
