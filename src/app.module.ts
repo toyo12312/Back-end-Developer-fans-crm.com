@@ -5,8 +5,7 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
-    // Ensure the connection string is correct and the database is running
-    MongooseModule.forRoot('mongodb://127.0.0.1:27017/user-management'),
+    MongooseModule.forRoot(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/user-management'),
     UsersModule,
     AuthModule,
   ],
