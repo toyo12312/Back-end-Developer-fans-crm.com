@@ -97,3 +97,8 @@ Run the entire application (API + MongoDB) with a single command:
 ```bash
 docker-compose up --build
 ```
+
+Once started, the API will be available at:
+👉 http://localhost:3000/api/v1/get-users
+
+Note: The database seeding (2M users) starts automatically. Please wait a moment for the logs to confirm completion.
