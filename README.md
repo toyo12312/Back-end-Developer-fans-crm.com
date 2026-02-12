@@ -15,6 +15,22 @@ A high-performance REST API built with **NestJS**, designed to handle large data
 
 ---
 
+## 🐳 Quick Start (Recommended)
+
+Run the entire application (API + MongoDB) with a single command. You don't need to install Node.js locally.
+
+````bash
+docker-compose up --build
+'''
+
+Once started, the API will be available at:
+👉 http://localhost:3000/api/v1/get-users
+
+Note: The database seeding (2M users) starts automatically on the first launch. Please wait a moment for the logs to confirm completion.
+
+---
+
+
 ## 🚀 Getting Started
 
 ### 1️⃣ Setup Environment
@@ -25,7 +41,7 @@ Create a `.env` file in the root directory:
 JWT_SECRET=your_super_secret_key_here
 PORT=3000
 MONGO_URI=mongodb://localhost:27017/user-management
-```
+````
 
 2️⃣ Installation & Launch
 
@@ -89,16 +105,3 @@ src/
 └── main.ts         # Application entry point (Bootstrap)
 
 ```
-
-## 🐳 Quick Start with Docker
-
-Run the entire application (API + MongoDB) with a single command:
-
-```bash
-docker-compose up --build
-```
-
-Once started, the API will be available at:
-👉 http://localhost:3000/api/v1/get-users
-
-Note: The database seeding (2M users) starts automatically. Please wait a moment for the logs to confirm completion.
