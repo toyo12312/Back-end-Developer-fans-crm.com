@@ -23,7 +23,8 @@ Run the entire application (API + MongoDB) with a single command. You don't need
 ```bash
 docker-compose up --build
 ```
-````
+
+---
 
 Once started, the API will be available at:
 👉 **[http://localhost:3000/api/v1/get-users](https://www.google.com/search?q=http://localhost:3000/api/v1/get-users)**
@@ -110,3 +111,4 @@ src/
 └── main.ts         # Application entry point (Bootstrap)
 
 ```
+````
