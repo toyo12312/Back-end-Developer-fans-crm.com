@@ -89,3 +89,11 @@ src/
 └── main.ts         # Application entry point (Bootstrap)
 
 ```
+
+## 🐳 Quick Start with Docker
+
+Run the entire application (API + MongoDB) with a single command:
+
+```bash
+docker-compose up --build
+```
