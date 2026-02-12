@@ -30,7 +30,8 @@ Note: The database seeding (2M users) starts automatically on the first launch. 
 
 ---
 
-## 🚀 Getting Started
+⚙️ Local Development (Manual Setup)
+If you prefer to run the app without Docker (or for development purposes):
 
 ### 1️⃣ Setup Environment
 
