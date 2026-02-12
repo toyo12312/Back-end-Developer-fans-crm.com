@@ -110,7 +110,3 @@ src/
 └── main.ts         # Application entry point (Bootstrap)
 
 ```
-
-```
-
-```
