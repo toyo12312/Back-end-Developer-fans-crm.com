@@ -1,3 +1,4 @@
+````markdown
 # 🚀 User Management System (NestJS + MongoDB)
 
 A high-performance REST API built with **NestJS**, designed to handle large datasets efficiently. On startup, the system automatically populates the database with **2,000,000 random user records**.
@@ -22,15 +23,17 @@ Run the entire application (API + MongoDB) with a single command. You don't need
 ```bash
 docker-compose up --build
 ```
+````
 
 Once started, the API will be available at:
-👉 http://localhost:3000/api/v1/get-users
+👉 **[http://localhost:3000/api/v1/get-users](https://www.google.com/search?q=http://localhost:3000/api/v1/get-users)**
 
-Note: The database seeding (2M users) starts automatically on the first launch. Please wait a moment for the logs to confirm completion.
+> **Note:** The database seeding (2M users) starts automatically on the first launch. Please wait a moment for the logs to confirm completion.
 
 ---
 
-⚙️ Local Development (Manual Setup)
+## ⚙️ Local Development (Manual Setup)
+
 If you prefer to run the app without Docker (or for development purposes):
 
 ### 1️⃣ Setup Environment
@@ -41,43 +44,45 @@ Create a `.env` file in the root directory:
 JWT_SECRET=your_super_secret_key_here
 PORT=3000
 MONGO_URI=mongodb://localhost:27017/user-management
+
 ```
 
-2️⃣ Installation & Launch
+### 2️⃣ Installation & Launch
 
-```Bash
+```bash
 # Install dependencies
 npm install
 
-# Start MongoDB instance via Docker
-docker-compose up -d
+# Start ONLY MongoDB instance via Docker
+docker-compose up -d mongodb
 
 # Start application in development mode
 npm run start:dev
+
 ```
+
+---
 
 ## 📡 API Endpoints
 
-🔐 Authentication
-The add-user endpoint is protected. You must provide a JWT Token in the header:
+### 🔐 Authentication
 
-## Authorization: Bearer <your_token>
+The `add-user` endpoint is protected. You must provide a JWT Token in the header:
+`Authorization: Bearer <your_token>`
 
 ### 👤 User Management
 
 | Method   | Endpoint               | Description                        | Auth |
-| :------- | :--------------------- | :--------------------------------- | :--: |
-| **POST** | `/api/v1/add-user`     | Create a new user & log to console |  ✅  |
-| **GET**  | `/api/v1/get-users`    | Get paginated users with filters   |  ❌  |
-| **GET**  | `/api/v1/get-user/:id` | Get specific user by ID            |  ❌  |
-
----
+| -------- | ---------------------- | ---------------------------------- | ---- |
+| **POST** | `/api/v1/add-user`     | Create a new user & log to console | ✅   |
+| **GET**  | `/api/v1/get-users`    | Get paginated users with filters   | ❌   |
+| **GET**  | `/api/v1/get-user/:id` | Get specific user by ID            | ❌   |
 
 **Query Parameters for `GET /api/v1/get-users`:**
 
-- **page**: Page number (default: 1)
-- **limit**: Records per page (default: 10)
-- **search**: Filter by **name**, **email**, or **phone** (case-insensitive)
+- `page`: Page number (default: 1)
+- `limit`: Records per page (default: 10)
+- `search`: Filter by **name**, **email**, or **phone** (case-insensitive)
 
 ---
 
@@ -103,5 +108,9 @@ src/
 │   └── schemas/    # Mongoose User Schema definitions
 ├── app.module.ts   # Root module (app orchestration)
 └── main.ts         # Application entry point (Bootstrap)
+
+```
+
+```
 
 ```
